@@ -1,0 +1,40 @@
+================================================================================
+SUPERSTORE MODEL DIAGNOSTICS & RESIDUAL ERROR AUDIT (R v4.6.1)
+================================================================================
+1. CATEGORY-LEVEL OUT-OF-SAMPLE TEST ERROR PROFILE:
+# A tibble: 3 × 5
+  Category        Test_Records  RMSE   MAE Median_AE
+  <fct>                  <int> <dbl> <dbl>     <dbl>
+1 Furniture                444  73.0  29.4     12.0 
+2 Office Supplies         1183  99.2  17.0      2.41
+3 Technology               372 197.   54.1     11.6 
+--------------------------------------------------------------------------------
+2. TOP 10 PREDICTION OUTLIERS (MAXIMUM RESIDUAL DISCREPANCIES):
+       Profit Predicted_Profit  Residual Absolute_Error     Sales Discount
+1   4946.3700        2999.6050  1946.765       1946.765  9892.740      0.0
+2  -2639.9912        -784.5900 -1855.401       1855.401  1799.994      0.7
+3   5039.9856        3234.1325  1805.853       1805.853 10499.970      0.0
+4  -2929.4845       -1343.0375 -1586.447       1586.447  1889.990      0.8
+5   2229.0240         757.0617  1471.962       1471.962  4643.800      0.0
+6   2239.9872         966.5210  1273.466       1273.466  6999.960      0.0
+7   2504.2216        1277.2254  1226.996       1226.996  5443.960      0.0
+8   2591.9568        1500.0222  1091.935       1091.935  5399.910      0.0
+9  -1862.3124        -802.9466 -1059.366       1059.366  4297.644      0.4
+10  -786.0144         223.5384 -1009.553       1009.553  3930.072      0.2
+   Quantity Sub_Category  Region
+1        13      Binders Central
+2         2     Machines    East
+3         3      Copiers    East
+4         5      Binders Central
+5         4     Machines    East
+6         4     Machines    East
+7         4      Binders Central
+8         9      Copiers    East
+9        13       Tables   South
+10        3     Supplies Central
+--------------------------------------------------------------------------------
+3. RESIDUAL DISTRIBUTION MOMENTS:
+Mean Residual:   $3.8936 (Unbiased Centrality)
+Median Residual: $-0.5120
+Residual SD:     $119.13
+================================================================================

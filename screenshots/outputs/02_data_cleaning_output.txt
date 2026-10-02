@@ -1,0 +1,29 @@
+================================================================================
+SUPERSTORE DATA CLEANING & TRANSFORMATION AUDIT (R v4.6.1)
+================================================================================
+Cleaned Dataset Rows:       9994
+Cleaned Dataset Columns:    31
+Total Data Cells Audited:   309814
+Total Missing Cells:        0 (0.00%)
+Exact Duplicate Records:    0
+Order Date Range:           2011-01-04 to 2014-12-31 (1457 Days Span)
+Shipping Duration Range:    0 to 7 Days (Mean: 3.96 Days)
+Overall Profit Margin:      12.47%
+Loss-Making Transactions:   1871 (18.72% of all order lines)
+--------------------------------------------------------------------------------
+ENGINEERED FEATURES SUMMARY:
+ Shipping_Days   Profit_Margin                     Discount_Band 
+ Min.   :0.000   Min.   :-2.7500   0% (None)              :4798  
+ 1st Qu.:3.000   1st Qu.: 0.0750   1%-20% (Low/Moderate)  :3803  
+ Median :4.000   Median : 0.2700   >20% (Deep Promotional):1393  
+ Mean   :3.959   Mean   : 0.1203                                 
+ 3rd Qu.:5.000   3rd Qu.: 0.3625                                 
+ Max.   :7.000   Max.   : 0.5000                                 
+    Loss_Status  
+ Length   :9994  
+ N.unique :   2  
+ N.blank  :   0  
+ Min.nchar:  10  
+ Max.nchar:  11  
+                 
+================================================================================

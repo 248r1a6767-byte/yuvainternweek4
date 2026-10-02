@@ -1,0 +1,60 @@
+================================================================================
+SUPERSTORE EXPLORATORY DATA ANALYSIS & DESCRIPTIVE PROFILING (R v4.6.1)
+================================================================================
+1. NUMERICAL DESCRIPTIVE STATISTICS:
+       Variable    N   Mean     SD Median    IQR      Min      Max Skewness
+1         Sales 9994 229.86 623.25  54.49 192.66     0.44 22638.48    12.97
+2        Profit 9994  28.66 234.26   8.67  27.64 -6599.98  8399.98     7.56
+3      Quantity 9994   3.79   2.23   3.00   3.00     1.00    14.00     1.28
+4      Discount 9994   0.16   0.21   0.20   0.20     0.00     0.80     1.68
+5 Shipping_Days 9994   3.96   1.75   4.00   2.00     0.00     7.00    -0.42
+6 Profit_Margin 9994   0.12   0.47   0.27   0.29    -2.75     0.50    -2.89
+  Excess_Kurtosis
+1          305.16
+2          396.99
+3            1.99
+4            2.41
+5           -0.29
+6           10.17
+--------------------------------------------------------------------------------
+2. CATEGORY FINANCIAL PERFORMANCE:
+# A tibble: 3 × 10
+  Category        Orders_Count Total_Sales Sales_Share_Pct Total_Profit
+  <fct>                  <int>       <dbl>           <dbl>        <dbl>
+1 Technology              1847     836154.            36.4      145455.
+2 Furniture               2121     742000.            32.3       18451.
+3 Office Supplies         6026     719047.            31.3      122491.
+# ℹ 5 more variables: Profit_Share_Pct <dbl>, Profit_Margin_Pct <dbl>,
+#   Mean_Discount_Pct <dbl>, Loss_Orders_Count <int>, Loss_Rate_Pct <dbl>
+--------------------------------------------------------------------------------
+3. REGIONAL FINANCIAL PERFORMANCE:
+# A tibble: 4 × 10
+  Region  Orders_Count Total_Sales Sales_Share_Pct Total_Profit Profit_Share_Pct
+  <fct>          <int>       <dbl>           <dbl>        <dbl>            <dbl>
+1 West            3203     725458.            31.6      108418.             37.9
+2 East            2848     678781.            29.6       91523.             32.0
+3 South           1620     391722.            17.0       46749.             16.3
+4 Central         2323     501240.            21.8       39706.             13.9
+# ℹ 4 more variables: Profit_Margin_Pct <dbl>, Mean_Discount_Pct <dbl>,
+#   Loss_Orders_Count <int>, Loss_Rate_Pct <dbl>
+--------------------------------------------------------------------------------
+4. DISCOUNT BAND FINANCIAL PERFORMANCE:
+# A tibble: 3 × 9
+  Discount_Band     Orders_Count Orders_Pct Total_Sales Total_Profit Mean_Profit
+  <fct>                    <int>      <dbl>       <dbl>        <dbl>       <dbl>
+1 0% (None)                 4798       48.0    1087908.      320988.        66.9
+2 1%-20% (Low/Mode…         3803       38.0     846522.      100785.        26.5
+3 >20% (Deep Promo…         1393       13.9     362770.     -135376.       -97.2
+# ℹ 3 more variables: Profit_Margin_Pct <dbl>, Loss_Orders_Count <int>,
+#   Loss_Rate_Pct <dbl>
+--------------------------------------------------------------------------------
+5. YEAR-OVER-YEAR GROWTH:
+# A tibble: 4 × 8
+  Order_Year Line_Items Unique_Orders Total_Sales Total_Profit Profit_Margin_Pct
+       <int>      <int>         <int>       <dbl>        <dbl>             <dbl>
+1       2011       1993           969     484248.       49544.              10.2
+2       2012       2102          1038     470533.       61619.              13.1
+3       2013       2580          1310     608474.       81727.              13.4
+4       2014       3319          1692     733947.       93508.              12.7
+# ℹ 2 more variables: Sales_YoY_Growth_Pct <dbl>, Profit_YoY_Growth_Pct <dbl>
+================================================================================

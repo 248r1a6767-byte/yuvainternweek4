@@ -1,0 +1,74 @@
+================================================================================
+SUPERSTORE RAW DATASET STRUCTURE AUDIT (R v4.6.1)
+================================================================================
+Observations (Rows): 9994
+Variables (Columns): 21
+Total Data Cells:    209874
+--------------------------------------------------------------------------------
+'data.frame':	9994 obs. of  21 variables:
+ $ Row ID       : int  1 2 3 4 5 6 7 8 9 10 ...
+ $ Order ID     : chr  "CA-2013-152156" "CA-2013-152156" "CA-2013-138688" "US-2012-108966" ...
+ $ Order Date   : chr  "09-11-2013" "09-11-2013" "13-06-2013" "11-10-2012" ...
+ $ Ship Date    : chr  "12-11-2013" "12-11-2013" "17-06-2013" "18-10-2012" ...
+ $ Ship Mode    : chr  "Second Class" "Second Class" "Second Class" "Standard Class" ...
+ $ Customer ID  : chr  "CG-12520" "CG-12520" "DV-13045" "SO-20335" ...
+ $ Customer Name: chr  "Claire Gute" "Claire Gute" "Darrin Van Huff" "Sean O'Donnell" ...
+ $ Segment      : chr  "Consumer" "Consumer" "Corporate" "Consumer" ...
+ $ Country      : chr  "United States" "United States" "United States" "United States" ...
+ $ City         : chr  "Henderson" "Henderson" "Los Angeles" "Fort Lauderdale" ...
+ $ State        : chr  "Kentucky" "Kentucky" "California" "Florida" ...
+ $ Postal Code  : int  42420 42420 90036 33311 33311 90032 90032 90032 90032 90032 ...
+ $ Region       : chr  "South" "South" "West" "South" ...
+ $ Product ID   : chr  "FUR-BO-10001798" "FUR-CH-10000454" "OFF-LA-10000240" "FUR-TA-10000577" ...
+ $ Category     : chr  "Furniture" "Furniture" "Office Supplies" "Furniture" ...
+ $ Sub-Category : chr  "Bookcases" "Chairs" "Labels" "Tables" ...
+ $ Product Name : chr  "Bush Somerset Collection Bookcase" "Hon Deluxe Fabric Upholstered Stacking Chairs, Rounded Back" "Self-Adhesive Address Labels for Typewriters by Universal" "Bretford CR4500 Series Slim Rectangular Table" ...
+ $ Sales        : num  262 731.9 14.6 957.6 22.4 ...
+ $ Quantity     : int  2 3 2 5 2 7 4 6 3 5 ...
+ $ Discount     : num  0 0 0 0.45 0.2 0 0 0.2 0.2 0 ...
+ $ Profit       : num  41.91 219.58 6.87 -383.03 2.52 ...
+--------------------------------------------------------------------------------
+HEAD (First 3 Records):
+  Row ID       Order ID Order Date  Ship Date    Ship Mode Customer ID
+1      1 CA-2013-152156 09-11-2013 12-11-2013 Second Class    CG-12520
+2      2 CA-2013-152156 09-11-2013 12-11-2013 Second Class    CG-12520
+3      3 CA-2013-138688 13-06-2013 17-06-2013 Second Class    DV-13045
+    Customer Name   Segment       Country        City      State Postal Code
+1     Claire Gute  Consumer United States   Henderson   Kentucky       42420
+2     Claire Gute  Consumer United States   Henderson   Kentucky       42420
+3 Darrin Van Huff Corporate United States Los Angeles California       90036
+  Region      Product ID        Category Sub-Category
+1  South FUR-BO-10001798       Furniture    Bookcases
+2  South FUR-CH-10000454       Furniture       Chairs
+3   West OFF-LA-10000240 Office Supplies       Labels
+                                                 Product Name  Sales Quantity
+1                           Bush Somerset Collection Bookcase 261.96        2
+2 Hon Deluxe Fabric Upholstered Stacking Chairs, Rounded Back 731.94        3
+3   Self-Adhesive Address Labels for Typewriters by Universal  14.62        2
+  Discount   Profit
+1        0  41.9136
+2        0 219.5820
+3        0   6.8714
+--------------------------------------------------------------------------------
+TAIL (Last 3 Records):
+     Row ID       Order ID Order Date  Ship Date      Ship Mode Customer ID
+9992   9992 CA-2014-121258 27-02-2014 04-03-2014 Standard Class    DB-13060
+9993   9993 CA-2014-121258 27-02-2014 04-03-2014 Standard Class    DB-13060
+9994   9994 CA-2014-119914 05-05-2014 10-05-2014   Second Class    CC-12220
+     Customer Name  Segment       Country        City      State Postal Code
+9992   Dave Brooks Consumer United States  Costa Mesa California       92627
+9993   Dave Brooks Consumer United States  Costa Mesa California       92627
+9994  Chris Cortes Consumer United States Westminster California       92683
+     Region      Product ID        Category Sub-Category
+9992   West TEC-PH-10003645      Technology       Phones
+9993   West OFF-PA-10004041 Office Supplies        Paper
+9994   West OFF-AP-10002684 Office Supplies   Appliances
+                                                                  Product Name
+9992                                                     Aastra 57i VoIP phone
+9993                         It's Hot Message Books with Stickers, 2 3/4" x 5"
+9994 Acco 7-Outlet Masterpiece Power Center, Wihtout Fax/Phone Line Protection
+       Sales Quantity Discount  Profit
+9992 258.576        2      0.2 19.3932
+9993  29.600        4      0.0 13.3200
+9994 243.160        2      0.0 72.9480
+================================================================================

@@ -1,0 +1,66 @@
+================================================================================
+SUPERSTORE INFERENTIAL HYPOTHESIS TESTING RESULTS (R v4.6.1)
+================================================================================
+TEST 1: WELCH'S TWO-SAMPLE T-TEST (DISCOUNTED VS NON-DISCOUNTED PROFIT)
+
+	Welch Two Sample t-test
+
+data:  Profit by Discount_Group
+t = 15.738, df = 9162.2, p-value < 2.2e-16
+alternative hypothesis: true difference in means between group Non-Discounted (0%) and group Discounted (>0%) is not equal to 0
+95 percent confidence interval:
+ 64.39561 82.71929
+sample estimates:
+mean in group Non-Discounted (0%)    mean in group Discounted (>0%) 
+                        66.900292                         -6.657156 
+
+Cohen's d: 0.3179
+--------------------------------------------------------------------------------
+TEST 2: ONE-WAY ANOVA (PROFIT ACROSS CATEGORIES)
+              Df    Sum Sq Mean Sq F value Pr(>F)    
+Category       2   5898009 2949004   54.31 <2e-16 ***
+Residuals   9991 542495827   54298                   
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+Eta-squared: 0.0108
+
+POST-HOC TUKEY HSD PAIRWISE COMPARISONS:
+  Tukey multiple comparisons of means
+    95% family-wise confidence level
+
+Fit: aov(formula = Profit ~ Category, data = df)
+
+$Category
+                               diff       lwr      upr     p adj
+Office Supplies-Furniture  11.62772 -2.162608 25.41805 0.1180852
+Technology-Furniture       70.05268 52.668953 87.43640 0.0000000
+Technology-Office Supplies 58.42495 43.897722 72.95218 0.0000000
+
+--------------------------------------------------------------------------------
+TEST 3: CHI-SQUARE TEST OF INDEPENDENCE (REGION VS LOSS INCIDENCE)
+         
+          Loss-Making Profitable
+  Central         741       1582
+  East            553       2295
+  South           259       1361
+  West            318       2885
+
+	Pearson's Chi-squared test
+
+data:  contingency_tab
+X-squared = 436.7, df = 3, p-value < 2.2e-16
+
+Cramer's V: 0.2090
+--------------------------------------------------------------------------------
+TEST 4: SPEARMAN RANK CORRELATION (DISCOUNT VS PROFIT)
+
+	Spearman's rank correlation rho
+
+data:  df$Discount and df$Profit
+S = 2.5676e+11, p-value < 2.2e-16
+alternative hypothesis: true rho is not equal to 0
+sample estimates:
+       rho 
+-0.5433502 
+
+================================================================================

@@ -1,0 +1,39 @@
+Project Title: Comprehensive Data Analysis of Superstore Sales
+Subtitle: Integrated Data Cleaning, Visualization, Statistical Analysis, and Predictive Modeling Using R
+Selected Dataset: Tableau / Kaggle Sample Superstore Sales Dataset (9,994 records, 21 attributes)
+Internship Track: Data Analytics & Predictive Science (Final Capstone Week 4 Submission)
+GitHub URL: https://github.com/248r1a6767-byte/yuvainternweek4
+
+This submission represents the definitive capstone project of the four-week data analytics internship, fully consolidating, expanding, and integrating the empirical workflows developed across Weeks 1, 2, and 3 into one comprehensive, publication-grade analytical investigation. The study examines 9,994 commercial line-item retail transactions from the Superstore sales dataset spanning January 4, 2011, through December 31, 2014, across 49 US states. Over this four-year trading window, Superstore generated $2,297,200.86 in gross revenue and $286,397.02 in operating profit, reflecting an enterprise-wide profit margin of 12.47%.
+
+The analysis was executed in R (v4.6.1) through an automated, reproducible eight-stage pipeline (scripts/run_all.R) that completed in 44.35 seconds with zero fatal errors. The research continuum progresses systematically across ten interconnected analytical tiers:
+
+1. Data Quality & Cleaning: Ingestion auditing established 100% empirical completeness across all 209,874 cells (0 missing values, 0 exact duplicates). Data preparation standardized 5-digit US ZIP postal codes with zero-padding (repairing truncated Vermont records), parsed chronological dates, sanitized UTF-8 character descriptions, and engineered vital operational features: fulfillment latency (Shipping_Days), net profit margins, loss-making flags, and promotional discount bands. Strict zero-leakage protocols were enforced by separating an 80% training partition (n = 7,995) from a 20% holdout test partition (n = 1,999) prior to any model fitting.
+
+2. Exploratory & Temporal Dynamics: Longitudinal time-series analysis revealed sustained 51.4% top-line sales growth (expanding from $484.2k in 2011 to $733.2k in 2014) alongside an 88.6% profit expansion. Fourth-quarter commercial surges consistently drive over 35% of annual revenue and 38% of annual profit, demanding specialized pre-holiday logistics planning.
+
+3. Merchandise Hierarchy & The Furniture Deficit: While Technology, Furniture, and Office Supplies generate comparable gross sales ($719k to $836k), net returns diverge dramatically. Technology leads enterprise profitability with $145,454.95 in profit (17.39% margin) anchored by Copiers ($55,617.82, 36.6% margin) and Phones ($44,515.73). Conversely, Furniture generates only $18,451.27 (2.49% margin), severely burdened by chronic line-item losses in Tables (-$17,725.48) and Bookcases (-$3,472.56).
+
+4. Geographic Disparity & Regional Losses: Geographic benchmarking identified the West as the top-performing division ($725.5k sales, $108.4k profit, 14.95% margin). In contrast, the Central territory suffers from an elevated transaction loss rate of 31.90% (741 out of 2,323 line items lost money), yielding an operating margin of just 7.92% due to uncurbed regional discounting in Texas and Illinois.
+
+5. The 20% Promotional Discount Cliff: Scatter plot LOESS smoothing and non-parametric rank profiling uncovered an immediate profitability collapse beyond the 20% discount mark. Orders with 0% discount average $66.90 in profit (30.1% margin), low/moderate discounts (1%-20%) yield $34.22 (17.2% margin), while deep promotional discounts (>20%) collapse to -$62.58 median profit and -41.8% margin (58.4% loss rate), destroying over $90,000 in gross margin.
+
+6. Inferential Hypothesis Testing: Four formal hypothesis tests were verified at alpha = 0.05:
+   - Welch's Two-Sample t-Test: Confirmed non-discounted orders significantly outperform discounted orders (t = 15.74, df = 9162.2, p < 0.0001, Cohen's d = 0.318; 95% CI of diff: [$64.40, $82.72]).
+   - One-Way ANOVA & Tukey HSD: Confirmed massive category profit divergence (F(2, 9991) = 54.31, p < 0.0001, eta^2 = 0.0108), with Technology significantly exceeding Office Supplies (diff = $58.42, p < 0.0001) and Furniture (diff = $70.36, p < 0.0001).
+   - Chi-Square Test of Independence: Verified that regional loss incidence is highly dependent on geographic territory (Chi-Square(3) = 436.70, p < 0.0001, Cramer's V = 0.2090).
+   - Spearman Rank Correlation: Confirmed a robust, statistically significant negative monotonic association between discount rate and profit (rho = -0.5434, p < 0.0001).
+
+7. Cross-Validated Predictive Machine Learning: Four regression models predicting continuous transaction profit were evaluated across 5-fold cross-validation and the untouched holdout test partition (n = 1,999):
+   - Naive Mean Baseline: CV RMSE = $226.15, Test RMSE = $256.79, Test R^2 = 0.0000.
+   - Multiple Linear Regression (OLS): CV RMSE = $196.50, Test RMSE = $195.71, Test R^2 = 0.4186 (severely constrained by heteroscedasticity and non-linear threshold effects).
+   - Regularized Elastic Net: CV RMSE = $204.79, Test RMSE = $197.74, Test R^2 = 0.4065.
+   - Champion Random Forest Ensemble (ntree = 200, mtry = 3): CV RMSE = $138.09, Test RMSE = $119.16, Test MAE = $26.66, Test R^2 = 0.7845! The champion model reduced generalization error by 53.59% over the baseline and delivered a median absolute error of just $2.41 in commodity office supplies. Permutation importance demonstrated that Sales (%IncMSE = 25.66%) and Discount (%IncMSE = 25.61%) drive over 70% of out-of-sample predictive power.
+
+8. Strategic Corporate Recommendations:
+   - Implement an automated POS/ERP hard cap at 20% promotional discount to recover $45k-$60k in annual gross margin.
+   - Restructure or discontinue unprofitable Table and Bookcase product lines to eliminate $21,000+ in chronic capital drag.
+   - Standardize Central region discount authorizations to elevate operating margins from 7.92% toward the 12.5% corporate benchmark.
+   - Deploy the trained Random Forest model artifact (random_forest_model.rds) into a real-time deal scoring API for instant sales margin guidance.
+
+The complete report has been compiled into a professional 55-page Microsoft Word document (Week4_Superstore_Comprehensive_Data_Analysis_Final_Report.docx, 2.20 MB) featuring 37 styled tables, 14 publication-grade 300-DPI ggplot2 figures, 6 high-resolution terminal capture cards, executive callout banners, and fully reproducible R code scripts.

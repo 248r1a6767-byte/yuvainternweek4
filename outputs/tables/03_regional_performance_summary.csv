@@ -1,0 +1,5 @@
+"Region","Orders_Count","Total_Sales","Sales_Share_Pct","Total_Profit","Profit_Share_Pct","Profit_Margin_Pct","Mean_Discount_Pct","Loss_Orders_Count","Loss_Rate_Pct"
+"West",3203,725457.82,31.58,108418.45,37.86,14.94,10.93,318,9.93
+"East",2848,678781.24,29.55,91522.78,31.96,13.48,14.54,553,19.42
+"South",1620,391721.91,17.05,46749.43,16.32,11.93,14.73,259,15.99
+"Central",2323,501239.89,21.82,39706.36,13.86,7.92,24.04,741,31.9

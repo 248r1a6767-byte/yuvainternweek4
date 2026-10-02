@@ -1,0 +1,5 @@
+"Model","CV_RMSE","CV_MAE","CV_R2","Test_RMSE","Test_MAE","Test_R2","Error_Reduction_Pct","Model_Status"
+"1. Naive Baseline (Mean)",226.15,61.14,0,256.79,69.21,0,0,"Benchmark"
+"2. Multiple Linear Regression (OLS)",196.5,58.28,0.2635,195.71,64.07,0.4186,23.78,"Underfitting"
+"3. Elastic Net Regularization",204.79,54.36,0.041,197.74,61.57,0.4065,23,"Constrained"
+"4. Random Forest Regressor (Champion)",138.09,23.74,0.634,119.16,26.66,0.7845,53.59,"Champion (Selected)"

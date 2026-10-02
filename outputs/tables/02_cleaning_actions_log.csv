@@ -1,0 +1,8 @@
+"Step","Issue_Detected","Detection_Method","Action_Taken","Business_Impact"
+1,"Variable names contained dots and spaces ('Order.Date', 'Ship Mode')","colnames(df) inspection","Standardized to clean underscore syntax (e.g., 'Order_Date', 'Ship_Mode')","Guarantees seamless programmatic access across R packages and models"
+2,"Character columns contained irregular trailing whitespace","Regular expression character audit","UTF-8 sanitization via iconv() and trimws()","Eliminates silent string mismatch errors during filtering and grouping"
+3,"Missing value audit across 209,874 data cells","sum(is.na(x) | x == '') profiling","Confirmed 0 missing values; 100% empirical completeness retained","Preserves full analytical population (N = 9,994) without imputation bias"
+4,"Order Date and Ship Date stored as raw character strings (dd-mm-yyyy)","class(df$Order_Date) check","Parsed to standard Date class using format '%d-%m-%Y'","Enables accurate chronological aggregation, trends, and seasonal modeling"
+5,"Truncated 5-digit US postal codes (e.g., Burlington, VT '5408')","nchar(df$Postal_Code) string length audit","Applied zero-padding sprintf('%05d', as.integer(Postal_Code))","Restores geographical GIS integrity for mapping and spatial analysis"
+6,"Fulfillment duration unquantified in raw attributes","Date subtraction logic","Engineered Shipping_Days = Ship_Date - Order_Date","Enables SLA compliance tracking across shipping tiers (Standard vs Express)"
+7,"Non-linear discount erosion and profitability flags unindexed","Profit margin calculation (Profit / Sales)","Engineered Profit_Margin, Loss_Making_Flag, Discount_Band, and Temporal dimensions","Enables forensic discount threshold analysis and predictive profit modeling"

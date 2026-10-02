@@ -1,0 +1,38 @@
+================================================================================
+SUPERSTORE PREDICTIVE MODELING & PERFORMANCE AUDIT (R v4.6.1)
+================================================================================
+1. 5-FOLD CROSS-VALIDATION & HOLDOUT TEST SET PERFORMANCE MASTER TABLE:
+                                  Model CV_RMSE CV_MAE  CV_R2 Test_RMSE
+1              1. Naive Baseline (Mean)  226.15  61.14 0.0000    256.79
+2   2. Multiple Linear Regression (OLS)  196.50  58.28 0.2635    195.71
+3         3. Elastic Net Regularization  204.79  54.36 0.0410    197.74
+4 4. Random Forest Regressor (Champion)  138.09  23.74 0.6340    119.16
+  Test_MAE Test_R2 Error_Reduction_Pct        Model_Status
+1    69.21  0.0000                0.00           Benchmark
+2    64.07  0.4186               23.78        Underfitting
+3    61.57  0.4065               23.00         Constrained
+4    26.66  0.7845               53.59 Champion (Selected)
+--------------------------------------------------------------------------------
+2. RANDOM FOREST ARCHITECTURE SUMMARY:
+
+Call:
+ randomForest(formula = ols_formula, data = train_set, ntree = 200,      mtry = 3, importance = TRUE) 
+               Type of random forest: regression
+                     Number of trees: 200
+No. of variables tried at each split: 3
+
+          Mean of squared residuals: 19069.82
+                    % Var explained: 63.4
+--------------------------------------------------------------------------------
+3. RANDOM FOREST VARIABLE IMPORTANCE PROFILE:
+      %IncMSE IncNodePurity       Feature
+1 25.65740870     220737070         Sales
+2 25.61062318      50868131      Discount
+3  6.82509551      46863875  Sub_Category
+4  5.18729884       7185459      Category
+5  0.96371539       6228009     Ship_Mode
+6  0.68394944       6865847       Segment
+7  0.08486741      10886423        Region
+8  0.07526635      17708255      Quantity
+9 -0.79558011      14208536 Shipping_Days
+================================================================================

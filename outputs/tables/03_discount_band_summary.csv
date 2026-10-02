@@ -1,0 +1,4 @@
+"Discount_Band","Orders_Count","Orders_Pct","Total_Sales","Total_Profit","Mean_Profit","Profit_Margin_Pct","Loss_Orders_Count","Loss_Rate_Pct"
+"0% (None)",4798,48.01,1087908.47,320987.6,66.9,29.51,0,0
+"1%-20% (Low/Moderate)",3803,38.05,846522.24,100785.47,26.5,11.91,523,13.75
+">20% (Deep Promotional)",1393,13.94,362770.15,-135376.06,-97.18,-37.32,1348,96.77
