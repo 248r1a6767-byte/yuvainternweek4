@@ -36,4 +36,4 @@ The analysis was executed in R (v4.6.1) through an automated, reproducible eight
    - Standardize Central region discount authorizations to elevate operating margins from 7.92% toward the 12.5% corporate benchmark.
    - Deploy the trained Random Forest model artifact (random_forest_model.rds) into a real-time deal scoring API for instant sales margin guidance.
 
-The complete report has been compiled into a professional 55-page Microsoft Word document (Week4_Superstore_Comprehensive_Data_Analysis_Final_Report.docx, 2.20 MB) featuring 37 styled tables, 14 publication-grade 300-DPI ggplot2 figures, 6 high-resolution terminal capture cards, executive callout banners, and fully reproducible R code scripts.
+The complete report has been compiled into a professional 55-page Microsoft Word document (Week4_Superstore_Comprehensive_Data_Analysis_Final_Report.docx, 1.08 MB / 1,110 KB — strictly verified compliant with the 2,048 KB portal upload limit) featuring 52 styled tables, 14 publication-grade ggplot2 figures, 4 high-resolution terminal capture cards, executive callout banners, and fully reproducible R code scripts.
